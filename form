@@ -1,0 +1,31 @@
+let myForm=document.querySelector("#my-form");
+let nameInput=document.querySelector("#name");
+let emailInput=document.querySelector("#email");
+let msg=document.querySelector(".msg");
+let userlist=document.querySelector("#users");
+
+myForm.addEventListener("submit",onSubmit);
+
+function onSubmit(e)
+{
+e.preventDefault();
+//console.log(nameInput.value);
+if (nameInput.value=="" || emailInput.value=="")
+{
+   // window.alert("Please fill all fields!");
+   msg.classList.add("error");
+   msg.innerHTML="Please enter all fields!";
+   setTimeout(()=>msg.remove(),3000);
+}
+else
+{
+	//console.log("SUCCESS!");
+	let li=document.createElement("li");
+	li.appendChild(document.createTextNode(`${nameInput.value}:${emailInput.value}`));
+	userlist.appendChild(li);
+	//clearfields
+	nameInput.value="";
+	emailInput.value="";
+}
+
+}
