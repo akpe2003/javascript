@@ -1,0 +1,13 @@
+let btn=document.querySelector(".btn");
+btn.addEventListener("mouseout",(e)=>{
+e.preventDefault();
+	console.log("click");
+	console.log(e);
+	console.log(e.target);
+     console.log(e.target.className);
+     console.log(e.target.id);
+     document.querySelector("#my-form").style.background="red";
+     document.querySelector(".btn").style.background="green";
+     document.querySelector("body").classList.add("bg-dark");
+     document.querySelector(".items").lastElementChild.innerHTML="<h1>Hello</h1>";
+});
